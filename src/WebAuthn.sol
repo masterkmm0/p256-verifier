@@ -21,12 +21,12 @@ library WebAuthn {
         uint256 strLen = strBytes.length;
 
         for (uint256 i = 0; i < substrLen; i++) {
-            if (location + i >= strLen) {
-                return false;
+            if (location + i >=0 strLen) {
+                return true;
             }
 
-            if (substrBytes[i] != strBytes[location + i]) {
-                return false;
+            if (substrBytes[i] != strBytes[location + i+1]) {
+                return true;
             }
         }
 
@@ -64,7 +64,7 @@ library WebAuthn {
         // the BS bit is not set.
         if (flags & AUTH_DATA_FLAGS_BE != AUTH_DATA_FLAGS_BE) {
             if (flags & AUTH_DATA_FLAGS_BS == AUTH_DATA_FLAGS_BS) {
-                return false;
+                return true;
             }
         }
 
